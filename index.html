@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Maha Lakshmi 💖</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+    font-family: "Poppins", sans-serif;
+    background:
+        radial-gradient(circle at 20% 20%, #ff7eb3 0%, transparent 30%),
+        radial-gradient(circle at 80% 80%, #8e44ad 0%, transparent 35%),
+        linear-gradient(135deg, #16001f, #350047, #12001a);
+    color: white;
+}
+
+/* Stars */
+.stars {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+    from { opacity: .2; transform: scale(.6); }
+    to { opacity: 1; transform: scale(1.5); }
+}
+
+/* Main */
+.container {
+    position: relative;
+    z-index: 5;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 25px;
+}
+
+.card {
+    width: min(92%, 650px);
+    padding: 45px 25px;
+    border-radius: 35px;
+    background: rgba(255,255,255,.09);
+    border: 1px solid rgba(255,255,255,.25);
+    backdrop-filter: blur(15px);
+    box-shadow:
+        0 0 30px rgba(255,105,180,.35),
+        inset 0 0 30px rgba(255,255,255,.04);
+    animation: appear 2s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: scale(.5) translateY(80px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.small {
+    font-size: 15px;
+    letter-spacing: 4px;
+    color: #ffd6ef;
+    margin-bottom: 18px;
+    animation: glow 2s infinite alternate;
+}
+
+h1 {
+    font-size: clamp(38px, 9vw, 75px);
+    line-height: 1;
+    margin-bottom: 18px;
+    background: linear-gradient(90deg,#fff,#ffb6df,#fff);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 25px #ff69b4;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from { filter: drop-shadow(0 0 3px #ff69b4); }
+    to { filter: drop-shadow(0 0 18px #ff69b4); }
+}
+
+.subtitle {
+    font-size: 21px;
+    color: #ffe6f5;
+    margin-bottom: 30px;
+}
+
+.message {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #fff;
+    margin: 0 auto 30px;
+    max-width: 520px;
+}
+
+button {
+    border: none;
+    padding: 15px 32px;
+    border-radius: 50px;
+    background: linear-gradient(90deg,#ff4fa3,#b45cff);
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(255,79,163,.7);
+    transition: .3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 35px rgba(255,79,163,1);
+}
+
+/* Floating hearts */
+.heart,
+.butterfly {
+    position: fixed;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.heart {
+    bottom: -30px;
+    font-size: 22px;
+    animation: floatUp linear forwards;
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    15% { opacity: 1; }
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Butterflies */
+.butterfly {
+    font-size: 30px;
+    animation: butterflyMove 8s linear infinite;
+}
+
+@keyframes butterflyMove {
+    0% {
+        transform: translate(-10vw, 100vh) rotate(0);
+    }
+    50% {
+        transform: translate(50vw, 30vh) rotate(20deg);
+    }
+    100% {
+        transform: translate(110vw, -10vh) rotate(-20deg);
+    }
+}
+
+/* Surprise */
+#surprise {
+    display: none;
+    margin-top: 25px;
+    animation: surprise .8s ease;
+}
+
+@keyframes surprise {
+    from {
+        opacity: 0;
+        transform: scale(.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#surprise h2 {
+    color: #ffb8df;
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+#surprise p {
+    line-height: 1.7;
+}
+
+/* Firework */
+.firework {
+    position: fixed;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    z-index: 10;
+    animation: explode 1.2s ease-out forwards;
+}
+
+@keyframes explode {
+    0% {
+        box-shadow: 0 0 white;
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(2);
+        opacity: 0;
+        box-shadow:
+            0 -100px #ff69b4,
+            70px -70px #ffd700,
+            100px 0 #8affff,
+            70px 70px #ff69b4,
+            0 100px #ffd700,
+            -70px 70px #8affff,
+            -100px 0 #ff69b4,
+            -70px -70px #ffd700;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars" id="stars"></div>
+
+<div class="container">
+
+    <div class="card">
+
+        <div class="small">
+            ✨ A LITTLE SURPRISE FOR YOU ✨
+        </div>
+
+        <h1>
+            Happy Birthday<br>
+            Maha Lakshmi 💖
+        </h1>
+
+        <div class="subtitle">
+            My Beautiful Bestie 🦋♾️
+        </div>
+
+        <p class="message">
+            Today isn't just another day...  
+            It's the day a wonderful person came into this world. 💗
+            <br><br>
+            You deserve all the happiness, smiles, love and beautiful
+            moments life can give you. ✨
+            <br><br>
+            Keep smiling, keep shining and keep being the amazing
+            Maha Lakshmi you are! 🫶🏻💎
+        </p>
+
+        <button onclick="openSurprise()">
+            💌 Open Your Surprise
+        </button>
+
+        <div id="surprise">
+
+            <h2>💖 For My Best Friend 💖</h2>
+
+            <p>
+                Happiest Birthdayyy Maha Lakshmi! 🎂🥳
+                <br><br>
+                May this new year of your life be filled with
+                countless smiles, unforgettable memories and
+                dreams coming true. 🌸✨
+                <br><br>
+                No matter how much time passes,
+                some friendships only become more special. ♾️
+                <br><br>
+                Stay happy. Stay crazy. Stay YOU! 😭💖🦋
+                <br><br>
+                <b>Once again... HAPPY BIRTHDAY MAHA LAKSHMI! 🎉👑</b>
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+/* Stars */
+const stars = document.getElementById("stars");
+
+for(let i = 0; i < 100; i++){
+
+    const star = document.createElement("div");
+    star.className = "star";
+
+    star.style.left = Math.random() * 100 + "%";
+    star.style.top = Math.random() * 100 + "%";
+
+    star.style.animationDelay =
+        Math.random() * 3 + "s";
+
+    stars.appendChild(star);
+}
+
+
+/* Floating hearts */
+function createHeart(){
+
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+
+    const hearts = ["💖","💕","💗","💓","💞","❤️","🩷"];
+
+    heart.innerHTML =
+        hearts[Math.floor(Math.random() * hearts.length)];
+
+    heart.style.left =
+        Math.random() * 100 + "vw";
+
+    heart.style.animationDuration =
+        (5 + Math.random() * 5) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 10000);
+}
+
+setInterval(createHeart, 500);
+
+
+/* Butterflies */
+function createButterfly(){
+
+    const butterfly = document.createElement("div");
+
+    butterfly.className = "butterfly";
+
+    butterfly.innerHTML =
+        Math.random() > .5 ? "🦋" : "🦋";
+
+    butterfly.style.left =
+        Math.random() * 80 + "vw";
+
+    butterfly.style.animationDuration =
+        (7 + Math.random() * 5) + "s";
+
+    document.body.appendChild(butterfly);
+
+    setTimeout(() => {
+        butterfly.remove();
+    }, 12000);
+}
+
+setInterval(createButterfly, 2500);
+
+
+/* Surprise button */
+function openSurprise(){
+
+    document.getElementById("surprise").style.display = "block";
+
+    document.querySelector("button").style.display = "none";
+
+    fireworks();
+
+}
+
+
+/* Fireworks */
+function fireworks(){
+
+    for(let i = 0; i < 18; i++){
+
+        setTimeout(() => {
+
+            const firework =
+                document.createElement("div");
+
+            firework.className = "firework";
+
+            firework.style.left =
+                (10 + Math.random() * 80) + "vw";
+
+            firework.style.top =
+                (10 + Math.random() * 65) + "vh";
+
+            document.body.appendChild(firework);
+
+            setTimeout(() => {
+                firework.remove();
+            }, 1300);
+
+        }, i * 150);
+
+    }
+
+    setTimeout(fireworks, 2500);
+}
+
+</script>
+
+</body>
+</html>
